@@ -506,6 +506,7 @@
 				849E705A1B8FFCD100C83E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		849E705B1B8FFCD100C83E99 /* Build configuration list for PBXNativeTarget "CoffeeShopTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +515,7 @@
 				849E705D1B8FFCD100C83E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
