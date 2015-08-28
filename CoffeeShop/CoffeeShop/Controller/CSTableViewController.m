@@ -71,7 +71,6 @@
 {
     NSString *latitude = [NSString stringWithFormat:@"%f", newLocation.coordinate.latitude];
     NSString *longitude = [NSString stringWithFormat:@"%f", newLocation.coordinate.longitude];
-    
     [csCore_ getLocationForLatitude:latitude Longitude:longitude];
 }
 
@@ -130,23 +129,14 @@
     return 60;
 }
 
-/* Delegate methods ends here */
+/* Table View delegate methods ends here */
 
+/* Delegate response handler for CSDataReceivedDelegate */
 -(void)didReceivedLocation:(NSMutableArray *)locDataArr
 {
     self.csDataArr_ = locDataArr;
     [self.csTableView_ reloadData];
     [loadingView_ removeFromSuperview];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -2,7 +2,7 @@
 //  CSCore.h
 //  CoffeeShop
 //
-//  Created by Admin on 28/08/15.
+//  Created by Arun Joseph on 28/08/15.
 //  Copyright (c) 2015 enoah. All rights reserved.
 //
 
@@ -17,16 +17,14 @@
 @end
 
 @interface CSCore : NSObject
-
 {
     NSMutableArray *locDataArr_;
 }
 
--(void)getLocationForLatitude: (NSString *)latitude
-                                Longitude:(NSString *)longitude;
 
 @property (nonatomic, retain)NSMutableArray *locDataArr_;
-
 @property (weak, nonatomic) id<CSDataReceivedDelegate> delegate_;
 
+-(void)getLocationForLatitude: (NSString *)latitude
+                    Longitude:(NSString *)longitude;
 @end

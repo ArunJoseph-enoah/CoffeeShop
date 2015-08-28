@@ -2,7 +2,7 @@
 //  CSCore.m
 //  CoffeeShop
 //
-//  Created by Admin on 28/08/15.
+//  Created by Arun Joseph on 28/08/15.
 //  Copyright (c) 2015 enoah. All rights reserved.
 //
 
@@ -17,6 +17,12 @@
 
 @synthesize locDataArr_;
 
+///////////////////////////////////////////////////////////////////////////////////////
+//Purpose     : To send request to four square API and get the list of coffee shops.
+//Parameters  : Latitude and Longitude (As NSString)
+//Return type : void
+///////////////////////////////////////////////////////////////////////////////////////
+
 -(void)getLocationForLatitude: (NSString *)latitude
                                 Longitude:(NSString *)longitude
 {
@@ -25,9 +31,6 @@
     NSString *urlString = [NSString stringWithFormat:@"%@ll=%@,%@&radius=2000&query=%@", WEB_SERVICE_API, latitude, longitude, searchString];
     
     NSURL *url = [NSURL URLWithString:urlString];
-    
-    //NSURL *url = [NSURL URLWithString:@"https://api.foursquare.com/v2/venues/explore?client_id=ACAO2JPKM1MXHQJCK45IIFKRFR2ZVL0QASMCBCG5NPJQWF2G&client_secret=YZCKUYJ1WHUV2QICBXUBEILZI1DMPUIDP5SHV043O04FKBHL&v=20130815&ll=13.0,80.2&radius=3000&query=coffee%20shop"];
-    
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
     [NSURLConnection sendAsynchronousRequest:request
@@ -41,6 +44,12 @@
                                 [self parseResponse:data];
                            }];
 }
+
+///////////////////////////////////////////////////////////////////////////////////////
+//Purpose     : This method will parse the response data and delegate the CSData Array
+//Parameters  : NSData responseData
+//Return type : void
+///////////////////////////////////////////////////////////////////////////////////////
 
 -(void)parseResponse: (NSData *)responseData
 {
